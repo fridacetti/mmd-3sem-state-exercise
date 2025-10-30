@@ -4,23 +4,21 @@
 import "../component-style/useState-exercise.css";
 
 // TODO for studerende: Importer useState fra React
-// import { useState } from 'react'
+import { useState } from "react";
 
 export default function UseStateExercise() {
   // TODO for studerende: Opret en state variabel til at gemme teksten
-  // Hint: const [tekst, setTekst] = useState('Velkommen!')
+  const [tekst, setTekst] = useState("Velkommen");
 
   // Velkommen! Er den midlertidige værdi, der skal erstattes med state!
-  const tekst = "Velkommen!";
+  // const tekst = "Velkommen!";
 
   return (
     <div className="exercise-container">
       <div className="exercise-card">
         <div className="card-header">
           <h1 className="card-title">useState Øvelse</h1>
-          <p className="card-description">
-            Få input-feltet til at opdatere overskriften i real-tid
-          </p>
+          <p className="card-description">Få input-feltet til at opdatere overskriften i real-tid</p>
         </div>
 
         <div className="card-content">
@@ -40,8 +38,8 @@ export default function UseStateExercise() {
               placeholder="Indtast din tekst..."
               className="text-input"
               // TODO for studerende: Tilføj value og onChange props
-              // value={tekst}
-              // onChange={(e) => setTekst(e.target.value)}
+              value={tekst}
+              onChange={(e) => setTekst(e.target.value)}
             />
           </div>
 
