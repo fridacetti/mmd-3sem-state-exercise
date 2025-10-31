@@ -11,19 +11,12 @@ export default function LikeCounterExercise() {
   const [isLiked, setIsLiked] = useState(false); //False betyder at knappen ikke er trykket
   // TODO for studerende: Implementer handleLike funktionen
 
-// handleLike sker når man trykker på knappen, her bruger den så if til om den er trykket eller ej og om der til tilføjes eller fjernes et like
+  // handleLike sker når man trykker på knappen, her bruger den så if til om den er trykket eller ej og om der til tilføjes eller fjernes et like
   const handleLike = () => {
-  if(isLiked){
-    //Fjerner like hvis den allerede er liked
-    setLikes(likes - 1);
-    setIsLiked(false);
-  }
-  else{
-    //tilføjer et like hvis den ikke er liked
-    setLikes(likes + 1);
-    setIsLiked(true);
-  }
-}
+    setIsLiked(!isLiked);
+    setLikes(isLiked ? likes - 1 : likes + 1);
+  };
+
   return (
     <div className="exercise-container">
       <div className="post-card">
@@ -52,12 +45,11 @@ export default function LikeCounterExercise() {
             onClick={handleLike}
           >
             {/* TODO for studerende: Vis det rigtige hjertet (❤️ / 🤍) i span elementet herunder  */}
-            
-            {/* Tilføjer rødt hjerte hvis isLiked er true eller så hvidt}
+            {/* Tilføjer rødt hjerte hvis isLiked er true eller så hvidt*/}
             <span className="heart-icon">{isLiked ? "❤️" : "🤍"}</span>
             {/* TODO for studerende: Vis "Liked" eller "Like" */}
             {/* Hint: Brug en ternary operator */}
-            Like
+            {isLiked ? "Liked" : "Like"}
           </button>
 
           <div className="like-count">
