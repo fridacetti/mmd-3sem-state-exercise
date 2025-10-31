@@ -1,17 +1,16 @@
 "use client";
+// TODO for studerende: Importer useState fra React
+import { useState } from "react";
 
 // Importer CSS filen
 import "../component-style/theme-toggle-student-exercise.css";
 
-// TODO for studerende: Importer useState fra React
-import { useState } from "react";
 
 export default function ThemeToggleStudentExercise() {
   // TODO for studerende: Opret state variabel for dark mode
-  const [isDarkMode, setIsDarkMode] = useState(false)
+  const [isDarkMode, setIsDarkMode] = useState(false);
 
-  // Midlertidig værdi - skal erstattes med state
-  // const isDarkMode = false;
+
 
   // TODO for studerende: Implementer handleToggle funktionen
   const handleToggle = () => {
@@ -36,7 +35,7 @@ export default function ThemeToggleStudentExercise() {
           <div className="demo-section">
             <h2 className="demo-title">
               <span className="toggle-icon">{isDarkMode ? "🌙" : "☀️"}</span>
-              {false ? "Mørk Tema" : "Lys Tema"}
+              {isDarkMode ? "Mørk Tema" : "Lys Tema"}
             </h2>
             <p className="demo-text">Dette er et eksempel på hvordan indholdet ser ud i det {isDarkMode ? "mørke" : "lyse"} tema. Alle farver, baggrunde og tekst skulle skifte automatisk når du toggle mellem temaerne.</p>
           </div>
